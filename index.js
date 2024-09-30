@@ -1,7 +1,7 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const dotenv = require('dotenv');
-// const cors = require('cors'); // Add this
+const cors = require('cors'); // Add this
 
 // Load environment variables
 dotenv.config();
@@ -10,10 +10,10 @@ const app = express();
 const port = 3000;
 
 // Use CORS to allow cross-origin requests
-// app.use(cors());
+app.use(cors());
 
 // MongoDB connection URI and database/collection details
-const uri = process.env.MONGO_URI || "";
+const uri = "mongodb+srv://soumya:edunova@cluster0.mv42m.mongodb.net/";
 const dbName = 'Edunova_DB';
 const booksCollectionName = 'Books';
 const userCollectionName = 'Users';
